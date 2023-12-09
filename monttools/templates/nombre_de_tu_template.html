@@ -1,0 +1,6 @@
+<form method="post" action="{% url 'nombre_de_la_vista' %}">
+    {% csrf_token %}
+    {{ form_primera_tabla.as_p }}
+    {{ form_segunda_tabla.as_p }}
+    <button type="submit">Guardar</button>
+  </form>

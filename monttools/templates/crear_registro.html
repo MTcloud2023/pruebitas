@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %} 
+
+
+<h1>Principal</h1>
+
+<form method="post" action="{% url 'registrar data' %}">
+    {% csrf_token %}
+ 
+    {{ form_primera_tabla.as_p }}
+    {{ form_segunda_tabla.as_p }}
+    {{ form_3_tabla.as_p }}
+    {{ form_4_tabla.as_p }}
+    {{ form_5_tabla.as_p }}
+    {{ form_6_tabla.as_p }}
+    {{ form_7_tabla.as_p }}
+    {{ form_8_tabla.as_p }}
+    {{ form_9_tabla.as_p }}
+    {{ form_10_tabla.as_p }}
+    {{ form_11_tabla.as_p }}
+    {{ form_12_tabla.as_p }}
+    {{ form_13_tabla.as_p }}
+    {{ form_14_tabla.as_p }}
+    {{ form_15_tabla.as_p }}
+    {{ form_16_tabla.as_p }}
+    {{ form_17_tabla.as_p }}
+    {{ form_18_tabla.as_p }}
+    {{ form_19_tabla.as_p }}
+    {{ form_20_tabla.as_p }}
+    {{ form_21_tabla.as_p }}
+    {{ form_22_tabla.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+
+{% endblock %}

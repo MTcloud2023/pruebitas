@@ -1,0 +1,790 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Detalles del Elemento</h1>
+
+    <h2>Datos Principales</h2>
+    <p>Folio: {{ elemento_datos_principales.folio }}</p>
+    <p>Fecha: {{ elemento_datos_principales.fecha }}</p>
+    <p>Centro: {{ elemento_datos_principales.centro }}</p>
+    <p>Hora Orden de Trabajo: {{ elemento_datos_principales.hora_ot }}</p>
+    <p>Modelo Anterior: {{ elemento_datos_principales.modelo_anterior }}</p>
+    <p>Modelo Actual: {{ elemento_datos_principales.modelo_actual }}</p>
+</table>
+<h2>Parametros de Montaje Forja </h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Folio</th>
+            <th>Montador</th>
+            <th>Auxiliar</th>
+            <th>Inicio</th>
+            <th>Fin</th>
+            <th>Altura_Dado_Inferior</th>
+            <th>Altura_Dado_Superior</th>
+            <th>Altura_Calza_Inferior</th>
+            <th>Altura_Calza_Superior</th>
+            <th>Altura_Total</th>
+            <th>Altura_Botador_Inferior_Previo</th>
+            <th>Altura_Botador_Inferior_Final</th>
+            <th>Altura_Botador_Superior_Previo</th>
+            <th>Altura_Botador_Superior_Final</th>
+            <th>Altura_Calza_Superior_Trasera</th>
+            <th>Altura_Calza_Superior_Izquierda</th>
+            <th>Altura_Calza_Superior_Derecha</th>
+            <th>Altura_Calza_Inferior_Trasera</th>
+            <th>Altura_Calza_Inferior_Izquierda</th>
+            <th>Altura_Calza_Inferior_Derecha</th>
+            <th>Tiempo_muerto_Codigo_1</th>
+            <th>Tiempo_muerto_Minutos_1</th>
+            <th>Tiempo_muerto_Codigo_2</th>
+            <th>Tiempo_muerto_Minutos_2</th>
+            <th>Tiempo_muerto_Codigo_3</th>
+            <th>Tiempo_muerto_Minutos_3</th>
+            <th>Tiempo_muerto_Codigo_4</th>
+            <th>Tiempo_muerto_Minutos_4</th>
+            <th>Observaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in segunda_tabla_data %}
+            <tr>
+                <td>{{ item.folio.folio }}</td>
+                <td>{{ item.Montador }}</td>
+                <td>{{ item.Auxiliar }}</td>
+                <td>{{ item.Inicio }}</td>
+                <td>{{ item.Fin }}</td>
+                <td>{{ item.Altura_Dado_Inferior }}</td>
+                <td>{{ item.Altura_Dado_Superior }}</td>
+                <td>{{ item.Altura_Calza_Inferior }}</td>
+                <td>{{ item.Altura_Calza_Superior }}</td>
+                <td>{{ item.Altura_Total }}</td>
+                <td>{{ item.Altura_Botador_Inferior_Previo }}</td>
+                <td>{{ item.Altura_Botador_Inferior_Final }}</td>
+                <td>{{ item.Altura_Botador_Superior_Previo }}</td>
+                <td>{{ item.Altura_Botador_Superior_Final }}</td>
+                <td>{{ item.Altura_Calza_Superior_Trasera }}</td>
+                <td>{{ item.Altura_Calza_Superior_Izquierda }}</td>
+                <td>{{ item.Altura_Calza_Superior_Derecha }}</td>
+                <td>{{ item.Altura_Calza_Inferior_Trasera }}</td>
+                <td>{{ item.Altura_Calza_Inferior_Izquierda }}</td>
+                <td>{{ item.Altura_Calza_Inferior_Derecha }}</td>
+                <td>{{ item.Tiempo_muerto_Codigo_1 }}</td>
+                <td>{{ item.Tiempo_muerto_Minutos_1 }}</td>
+                <td>{{ item.Tiempo_muerto_Codigo_2 }}</td>
+                <td>{{ item.Tiempo_muerto_Minutos_2 }}</td>
+                <td>{{ item.Tiempo_muerto_Codigo_3 }}</td>
+                <td>{{ item.Tiempo_muerto_Minutos_3 }}</td>
+                <td>{{ item.Tiempo_muerto_Codigo_4 }}</td>
+                <td>{{ item.Tiempo_muerto_Minutos_4 }}</td>
+                <td>{{ item.Observaciones }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+<h2>Parametros de Ajuste Forja </h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Montador</th>
+        <th>Auxiliar</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Altura_Dado_Inferior</th>
+        <th>Altura_Dado_Superior</th>
+        <th>Altura_Calza_Inferior</th>
+        <th>Altura_Calza_Superior</th>
+        <th>Altura_Total</th>
+        <th>Altura_Botador_Inferior_Previo</th>
+        <th>Altura_Botador_Inferior_Final</th>
+        <th>Altura_Botador_Superior_Previo</th>
+        <th>Altura_Botador_Superior_Final</th>
+        <th>Altura_Calza_Superior_Trasera</th>
+        <th>Altura_Calza_Superior_Izquierda</th>
+        <th>Altura_Calza_Superior_Derecha</th>
+        <th>Altura_Calza_Inferior_Trasera</th>
+        <th>Altura_Calza_Inferior_Izquierda</th>
+        <th>Altura_Calza_Inferior_Derecha</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 3_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td></td>
+            <td></td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.Altura_Dado_Inferior }}</td>
+            <td>{{ item.Altura_Dado_Superior }}</td>
+            <td>{{ item.Altura_Calza_Inferior }}</td>
+            <td>{{ item.Altura_Calza_Superior }}</td>
+            <td>{{ item.Altura_Total }}</td>
+            <td>{{ item.Altura_Botador_Inferior_Previo }}</td>
+            <td>{{ item.Altura_Botador_Inferior_Final }}</td>
+            <td>{{ item.Altura_Botador_Superior_Previo }}</td>
+            <td>{{ item.Altura_Botador_Superior_Final }}</td>
+            <td>{{ item.Altura_Calza_Superior_Trasera }}</td>
+            <td>{{ item.Altura_Calza_Superior_Izquierda }}</td>
+            <td>{{ item.Altura_Calza_Superior_Derecha }}</td>
+            <td>{{ item.Altura_Calza_Inferior_Trasera }}</td>
+            <td>{{ item.Altura_Calza_Inferior_Izquierda }}</td>
+            <td>{{ item.Altura_Calza_Inferior_Derecha }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table> 
+
+</table>
+<h2>Parametros Fin de corrida Forja</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Altura_Dado_Inferior</th>
+        <th>Altura_Dado_Superior</th>
+        <th>Altura_Calza_Inferior</th>
+        <th>Altura_Calza_Superior</th>
+        <th>Altura_Total</th>
+        <th>Altura_Botador_Inferior_Previo</th>
+        <th>Altura_Botador_Inferior_Final</th>
+        <th>Altura_Botador_Superior_Previo</th>
+        <th>Altura_Botador_Superior_Final</th>
+        <th>Altura_Calza_Superior_Trasera</th>
+        <th>Altura_Calza_Superior_Izquierda</th>
+        <th>Altura_Calza_Superior_Derecha</th>
+        <th>Altura_Calza_Inferior_Trasera</th>
+        <th>Altura_Calza_Inferior_Izquierda</th>
+        <th>Altura_Calza_Inferior_Derecha</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 4_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Altura_Dado_Inferior }}</td>
+            <td>{{ item.Altura_Dado_Superior }}</td>
+            <td>{{ item.Altura_Calza_Inferior }}</td>
+            <td>{{ item.Altura_Calza_Superior }}</td>
+            <td>{{ item.Altura_Total }}</td>
+            <td>{{ item.Altura_Botador_Inferior_Previo }}</td>
+            <td>{{ item.Altura_Botador_Inferior_Final }}</td>
+            <td>{{ item.Altura_Botador_Superior_Previo }}</td>
+            <td>{{ item.Altura_Botador_Superior_Final }}</td>
+            <td>{{ item.Altura_Calza_Superior_Trasera }}</td>
+            <td>{{ item.Altura_Calza_Superior_Izquierda }}</td>
+            <td>{{ item.Altura_Calza_Superior_Derecha }}</td>
+            <td>{{ item.Altura_Calza_Inferior_Trasera }}</td>
+            <td>{{ item.Altura_Calza_Inferior_Izquierda }}</td>
+            <td>{{ item.Altura_Calza_Inferior_Derecha }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table> 
+</table>
+<h2> Parametros de Montaje Recorte</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Montador</th>
+        <th>Auxiliar</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>carrera</th>
+        <th>Tiempo_muerto_Codigo_1</th>
+        <th>Tiempo_muerto_Minutos_1</th>
+        <th>Tiempo_muerto_Codigo_2</th>
+        <th>Tiempo_muerto_Minutos_2</th>
+        <th>Tiempo_muerto_Codigo_3</th>
+        <th>Tiempo_muerto_Minutos_3</th>
+        <th>Tiempo_muerto_Codigo_4</th>
+        <th>Tiempo_muerto_Minutos_4</th>
+        <th>Observaciones</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 5_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Montador }}</td>
+            <td>{{ item.Auxiliar }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.carrera }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_4 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_4 }}</td>
+            <td>{{ item.Observaciones }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table> 
+</table>
+<h2> Parametros de Ajuste recorte</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>carrera</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 6_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.carrera }}</td>
+
+        </tr>
+    {% endfor %}
+</tbody>
+</table> 
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>carrera</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 7_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.carrera }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Montador</th>
+        <th>Auxiliar</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Holgura</th>
+        <th>Tiempo_muerto_Codigo_1</th>
+        <th>Tiempo_muerto_Minutos_1</th>
+        <th>Tiempo_muerto_Codigo_2</th>
+        <th>Tiempo_muerto_Minutos_2</th>
+        <th>Tiempo_muerto_Codigo_3</th>
+        <th>Tiempo_muerto_Minutos_3</th>
+        <th>Tiempo_muerto_Codigo_4</th>
+        <th>Tiempo_muerto_Minutos_4</th>
+        <th>Observaciones</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 8_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Montador }}</td>
+            <td>{{ item.Auxiliar }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.Holgura }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_4 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_4 }}</td>
+            <td>{{ item.Observaciones }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Holgura</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 9_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.Holgura }}</td>
+
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Holgura</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 10_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Holgura }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Montador</th>
+        <th>Auxiliar</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Espesor_Matriz_Izquierda</th>
+        <th>Calza_Matriz_Izquierda</th>
+        <th>Espesor_Matriz_Derecha</th>
+        <th>Calza_Matriz_Derecha</th>
+        <th>Altura_Punzon</th>
+        <th>Altura_Asiento</th>
+        <th>Calza_en_Asiento</th>
+        <th>Carrera_o_Calza</th>
+        <th>Tiempo_muerto_Codigo_1</th>
+        <th>Tiempo_muerto_Minutos_1</th>
+        <th>Tiempo_muerto_Codigo_2</th>
+        <th>Tiempo_muerto_Minutos_2</th>
+        <th>Tiempo_muerto_Codigo_3</th>
+        <th>Tiempo_muerto_Minutos_3</th>
+        <th>Tiempo_muerto_Codigo_4</th>
+        <th>Tiempo_muerto_Minutos_4</th>
+        <th>Observaciones</th>
+        
+    </tr>
+</thead>
+<tbody>
+    {% for item in 11_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Montador }}</td>
+            <td>{{ item.Auxiliar }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.Espesor_Matriz_Izquierda }}</td>
+            <td>{{ item.Calza_Matriz_Izquierda }}</td>
+            <td>{{ item.Espesor_Matriz_Derecha }}</td>
+            <td>{{ item.Calza_Matriz_Derecha }}</td>
+            <td>{{ item.Altura_Punzon }}</td>
+            <td>{{ item.Altura_Asiento }}</td>
+            <td>{{ item.Calza_en_Asiento }}</td>
+            <td>{{ item.Carrera_o_Calza }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_4 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_4 }}</td>
+            <td>{{ item.Observaciones }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Espesor_Matriz_Izquierda</th>
+        <th>Calza_Matriz_Izquierda</th>
+        <th>Espesor_Matriz_Derecha</th>
+        <th>Calza_Matriz_Derecha</th>
+        <th>Altura_Punzon</th>
+        <th>Altura_Asiento</th>
+        <th>Calza_en_Asiento</th>
+        <th>Carrera_o_Calza</th>
+
+        
+    </tr>
+</thead>
+<tbody>
+    {% for item in 12_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.Espesor_Matriz_Izquierda }}</td>
+            <td>{{ item.Calza_Matriz_Izquierda }}</td>
+            <td>{{ item.Espesor_Matriz_Derecha }}</td>
+            <td>{{ item.Calza_Matriz_Derecha }}</td>
+            <td>{{ item.Altura_Punzon }}</td>
+            <td>{{ item.Altura_Asiento }}</td>
+            <td>{{ item.Calza_en_Asiento }}</td>
+            <td>{{ item.Carrera_o_Calza }}</td>
+
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Espesor_Matriz_Izquierda</th>
+        <th>Calza_Matriz_Izquierda</th>
+        <th>Espesor_Matriz_Derecha</th>
+        <th>Calza_Matriz_Derecha</th>
+        <th>Altura_Punzon</th>
+        <th>Altura_Asiento</th>
+        <th>Calza_en_Asiento</th>
+        <th>Carrera_o_Calza</th>            
+    </tr>
+</thead>
+<tbody>
+    {% for item in 13_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Espesor_Matriz_Izquierda }}</td>
+            <td>{{ item.Calza_Matriz_Izquierda }}</td>
+            <td>{{ item.Espesor_Matriz_Derecha }}</td>
+            <td>{{ item.Calza_Matriz_Derecha }}</td>
+            <td>{{ item.Altura_Punzon }}</td>
+            <td>{{ item.Altura_Asiento }}</td>
+            <td>{{ item.Calza_en_Asiento }}</td>
+            <td>{{ item.Carrera_o_Calza }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Montador</th>
+        <th>Auxiliar</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Espesor_Matriz_Izquierda</th>
+        <th>Calza_Matriz_Izquierda</th>
+        <th>Espesor_Matriz_Derecha</th>
+        <th>Calza_Matriz_Derecha</th>
+        <th>Altura_Punzon</th>
+        <th>Altura_Asiento</th>
+        <th>Calza_en_Asiento</th>
+        <th>Carrera_o_Calza</th>
+        <th>Tiempo_muerto_Codigo_1</th>
+        <th>Tiempo_muerto_Minutos_1</th>
+        <th>Tiempo_muerto_Codigo_2</th>
+        <th>Tiempo_muerto_Minutos_2</th>
+        <th>Tiempo_muerto_Codigo_3</th>
+        <th>Tiempo_muerto_Minutos_3</th>
+        <th>Tiempo_muerto_Codigo_4</th>
+        <th>Tiempo_muerto_Minutos_4</th>
+        <th>Observaciones</th>
+        
+    </tr>
+</thead>
+<tbody>
+    {% for item in 14_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Montador }}</td>
+            <td>{{ item.Auxiliar }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.Espesor_Matriz_Izquierda }}</td>
+            <td>{{ item.Calza_Matriz_Izquierda }}</td>
+            <td>{{ item.Espesor_Matriz_Derecha }}</td>
+            <td>{{ item.Calza_Matriz_Derecha }}</td>
+            <td>{{ item.Altura_Punzon }}</td>
+            <td>{{ item.Altura_Asiento }}</td>
+            <td>{{ item.Calza_en_Asiento }}</td>
+            <td>{{ item.Carrera_o_Calza }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_4 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_4 }}</td>
+            <td>{{ item.Observaciones }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Espesor_Matriz_Izquierda</th>
+        <th>Calza_Matriz_Izquierda</th>
+        <th>Espesor_Matriz_Derecha</th>
+        <th>Calza_Matriz_Derecha</th>
+        <th>Altura_Punzon</th>
+        <th>Altura_Asiento</th>
+        <th>Calza_en_Asiento</th>
+        <th>Carrera_o_Calza</th>
+
+        
+    </tr>
+</thead>
+<tbody>
+    {% for item in 15_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.Espesor_Matriz_Izquierda }}</td>
+            <td>{{ item.Calza_Matriz_Izquierda }}</td>
+            <td>{{ item.Espesor_Matriz_Derecha }}</td>
+            <td>{{ item.Calza_Matriz_Derecha }}</td>
+            <td>{{ item.Altura_Punzon }}</td>
+            <td>{{ item.Altura_Asiento }}</td>
+            <td>{{ item.Calza_en_Asiento }}</td>
+            <td>{{ item.Carrera_o_Calza }}</td>
+
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Espesor_Matriz_Izquierda</th>
+        <th>Calza_Matriz_Izquierda</th>
+        <th>Espesor_Matriz_Derecha</th>
+        <th>Calza_Matriz_Derecha</th>
+        <th>Altura_Punzon</th>
+        <th>Altura_Asiento</th>
+        <th>Calza_en_Asiento</th>
+        <th>Carrera_o_Calza</th>
+
+        
+    </tr>
+</thead>
+<tbody>
+    {% for item in 16_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Espesor_Matriz_Izquierda }}</td>
+            <td>{{ item.Calza_Matriz_Izquierda }}</td>
+            <td>{{ item.Espesor_Matriz_Derecha }}</td>
+            <td>{{ item.Calza_Matriz_Derecha }}</td>
+            <td>{{ item.Altura_Punzon }}</td>
+            <td>{{ item.Altura_Asiento }}</td>
+            <td>{{ item.Calza_en_Asiento }}</td>
+            <td>{{ item.Carrera_o_Calza }}</td>
+
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Montador</th>
+        <th>Auxiliar</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>carrera</th>
+        <th>Tiempo_muerto_Codigo_1</th>
+        <th>Tiempo_muerto_Minutos_1</th>
+        <th>Tiempo_muerto_Codigo_2</th>
+        <th>Tiempo_muerto_Minutos_2</th>
+        <th>Tiempo_muerto_Codigo_3</th>
+        <th>Tiempo_muerto_Minutos_3</th>
+        <th>Tiempo_muerto_Codigo_4</th>
+        <th>Tiempo_muerto_Minutos_4</th>
+        <th>Observaciones</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 17_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Montador }}</td>
+            <td>{{ item.Auxiliar }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.carrera }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_4 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_4 }}</td>
+            <td>{{ item.Observaciones }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>carrera</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 18_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.carrera }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>carrera</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 19_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.carrera }}</td>
+
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Montador</th>
+        <th>Auxiliar</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>carrera</th>
+        <th>Tiempo_muerto_Codigo_1</th>
+        <th>Tiempo_muerto_Minutos_1</th>
+        <th>Tiempo_muerto_Codigo_2</th>
+        <th>Tiempo_muerto_Minutos_2</th>
+        <th>Tiempo_muerto_Codigo_3</th>
+        <th>Tiempo_muerto_Minutos_3</th>
+        <th>Tiempo_muerto_Codigo_4</th>
+        <th>Tiempo_muerto_Minutos_4</th>
+        <th>Observaciones</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 20_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Montador }}</td>
+            <td>{{ item.Auxiliar }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.carrera }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_1 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_2 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_3 }}</td>
+            <td>{{ item.Tiempo_muerto_Codigo_4 }}</td>
+            <td>{{ item.Tiempo_muerto_Minutos_4 }}</td>
+            <td>{{ item.Observaciones }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>carrera</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 21_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.Inicio }}</td>
+            <td>{{ item.Fin }}</td>
+            <td>{{ item.carrera }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</table>
+<h2> Tabla</h2>
+<table border="1">
+<thead>
+    <tr>
+        <th>Folio</th>
+        <th>carrera</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in 22_tabla_data %}
+        <tr>
+            <td>{{ item.folio.folio }}</td>
+            <td>{{ item.carrera }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+
+
+{% endblock %}

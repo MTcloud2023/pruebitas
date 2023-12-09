@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Consulta de Datos</h1>
+
+    <h2>Datos Principales</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Folio</th>
+                <th>Fecha</th>
+                <th>Centro</th>
+                <th>Hora orden de trabajo</th> 
+                <th>Modelo Anterior</th>
+                <th>Modelo Actual</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in primera_tabla_data %}
+                <tr>
+                        <td align="center">
+                            <a href="{% url 'consultaaespecifico' folio_id=item.folio %}">{{ item.folio }}</a>
+                        </td>
+                        
+                    </td>
+                    <td align="center">{{ item.fecha }}</td>
+                    <td align="center">{{ item.centro }}</td>
+                    <td align="center">{{ item.hora_ot }}</td>
+                    <td align="center">{{ item.modelo_anterior }}</td>
+                    <td align="center">{{ item.modelo_actual }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
